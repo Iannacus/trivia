@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 class="center">Trivian</h1>
+    </header>
+    <div class="flex--container center">
+        <div class="topic">
+            <div class="left mr-top-3">
+                <div class="tl"></div>
+                <div class="bl"></div>
+            </div>
+            <div class="topic__text mr-top-3 center" id="topic">
+                <!--Tema de la pregunta -->
+            </div>
+            <div class="right mr-top-3">
+                <div class="tr"></div>
+                <div class="br"></div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="left mr-top-3">
+                <div class="tl"></div>
+                <div class="bl"></div>
+            </div>
+            <div class="question__number mr-top-3 center" id="questionCounter">
+                <p>Pregunta 1</p>
+            </div>
+            <div class="right mr-top-3">
+                <div class="tr"></div>
+                <div class="br"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="questionContainer center">
+        <div class="q">
+            <div class="q__text" id="question">
+                <!--Aqui va la pregunta-->
+            </div>
+            <div class="q__result" id="result">
+                <!--Resultado de respuesta js-->
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="container">
+        <div class="answers" id="answer">
+            <!--Respuestas js-->
+        </div>
+        <div class="next" id="next">
+            <p>Siguiente</p>
+        </div>   
+    </div>
+    <script src="api.js"></script>
+</body>
+</html>
