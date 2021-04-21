@@ -30,11 +30,23 @@ h1 {
     margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+    .container {
+        width: 70%;
+    }
+}
+
 .flex--container {
-    width: 70%;
+    width: 85%;
     display: flex;
     justify-content: center;
     gap: 0;
+}
+
+@media (min-width: 768px) {
+    .flex--container {
+        width: 70%;
+    }
 }
 
 .mr-top-3 {
@@ -130,7 +142,7 @@ h1 {
 }
 
 .questionContainer {
-    width: 72%;
+    width: 92%;
     height: 200px;
     border: solid 2px blue;
     border-radius: 10px;
@@ -139,6 +151,12 @@ h1 {
     background-color: var(--azulContenedor);
     backdrop-filter: blur(4px);
     color: white;
+}
+
+@media (min-width: 768px) {
+    .questionContainer {
+        width: 73%;
+    }
 }
 
 @media (min-width: 768px){
