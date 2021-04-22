@@ -224,4 +224,41 @@ h1 {
     }
 }
 
+.options__single {
+    font-size: 12px;
+    color: white;
+}
 
+.btn {
+    font-size: 14px;
+    background-color: blue;
+    width: 45%;
+    margin: 10px auto;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 3px 3px 5px 3px black;
+}
+
+.options {
+    margin-top: 10px;
+}
+
+.options__single {
+    margin-bottom: 5px;
+}
+
+.options__single label {
+    display: block;
+    text-align: left;
+}
+
+.options__single select {
+    width: 100%;
+}
+
+.options__single input {
+    width: 100%;
+}
