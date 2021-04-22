@@ -1,4 +1,4 @@
-export const cat = 
+export const categories = 
 [{"id": '',  "name": "Any Category" },
 {"id":9,"name":"General Knowledge"},
 {"id":10,"name":"Entertainment: Books"},

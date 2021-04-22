@@ -81,12 +81,12 @@ h1 {
 
 .topic {
     display: flex;
-    width: 60%;
+    width: 75%;
 }
 
 .question{
     display: flex;
-    width: 40%;
+    width: 25%;
 }
 
 
@@ -142,6 +142,7 @@ h1 {
 }
 
 .questionContainer {
+    position: relative;
     width: 92%;
     height: 200px;
     border: solid 2px blue;
@@ -261,4 +262,11 @@ h1 {
 
 .options__single input {
     width: 100%;
+}
+
+.score {
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
 }
