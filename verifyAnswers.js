@@ -1,6 +1,6 @@
 import { questions } from './play.js';
-import { getQuestionDifficulty, printScore } from './score.js';
-const resultArea = document.getElementById("result");
+import { getQuestionDifficulty, printScore, scoreArea } from './score.js';
+const resultArea = document.getElementById('result');
 let score = 0;
 let points = 0;
 
@@ -9,12 +9,12 @@ function verifyAnswer(ans, i, e, isBoolean) {
     if(ans === correctAnswer){
         printCorrect();
         points = getQuestionDifficulty(questions[i].difficulty);
-        paintAnswerArea(getAreaId(e), 'green');
+        paintAnswerArea(getAreaId(e), '#27DD97');
         score += points;
     }
     else{
         printIncorrect();
-        paintAnswerArea(getAreaId(e), 'red');
+        paintAnswerArea(getAreaId(e), '#DD2730'); //red
         paintCorrectAnswerArea(correctAnswer, isBoolean);        
     }
     resultArea.style.display = "block";
@@ -23,7 +23,7 @@ function verifyAnswer(ans, i, e, isBoolean) {
 
 function printCorrect(){
     resultArea.innerHTML = `<p>Correct</p>`
-    resultArea.style.color = "yellow"
+    resultArea.style.color = '#27DD97'
 }
 
 function paintAnswerArea(id, color){
@@ -34,11 +34,10 @@ function paintAnswerArea(id, color){
 function paintCorrectAnswerArea(correct, boolean) {
     let ids = [];
     !boolean ? ids = ['answer0', 'answer1', 'answer2', 'answer3'] : ids = ['answer0', 'answer1'];
-    console.log(ids);
     ids.forEach(id => {
         const answer = document.getElementById(id).textContent.trim();
         if(correct === answer) {
-            paintAnswerArea(id, 'green');
+            paintAnswerArea(id, '#27DD97');
         }
     });
 }
@@ -49,7 +48,12 @@ function getAreaId(event, boolean){
 
 function printIncorrect(){
     resultArea.innerHTML = `<p>Incorrect</p>`
-    resultArea.style.color = "red";
+    resultArea.style.color = "#DD2730";
 }
 
-export { verifyAnswer, resultArea, score };
+function resetScore() {
+    score = 0;
+    scoreArea.innerHTML = '';
+}
+
+export { verifyAnswer, resultArea, score, resetScore };

@@ -1,25 +1,26 @@
 
-const topicArea = document.getElementById("topic");
+const categoryArea = document.getElementById("questionCategory");
 const counterArea = document.getElementById("questionCounter");
-const questionArea = document.getElementById("question");
+const questionArea = document.getElementById("questionArea");
+const questionTextArea = document.getElementById("question");
 
 function printQuestionArea(i, array){
     const total = array.length;
     let { category, question } = array[i];
-    printTopic(category);
-    printQuestionNumber(i + 1, total);
+    printCategory(`<p>${category}</p>`);
+    printQuestionNumber(`<p>${i+1}/${total}</p>`);
     printQuestion(question);
 }
 
-function printTopic(category){
-    topicArea.innerHTML = `<p>${category}</p>`;
+function printCategory(message){
+    categoryArea.innerHTML = message;
 }
 function printQuestion(questionText){
-    questionArea.innerHTML = `<p>${questionText}</p>`;
+    questionTextArea.innerHTML = `<p>${questionText}</p>`;
 }
 
-function printQuestionNumber(questionNumber, totalQuestions){
-    counterArea.innerHTML = `<p>${questionNumber}/${totalQuestions}</p>`;
+function printQuestionNumber(message){
+    counterArea.innerHTML = message;
 }
 
-export { printQuestionArea, questionArea }
+export { printQuestionArea, printCategory, printQuestionNumber, questionArea, questionTextArea }

@@ -57,8 +57,9 @@ function printSelectButton() {
     `
 }
 
+
 function selectOptions(cat) {
     return printSelectNumberOfQuestions() + printSelectDificulty() + printSelectCategories(cat) + printSelectType() + printSelectButton();
 }
 
-export { selectOptions }
+export { selectOptions, printSelectButton }

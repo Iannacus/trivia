@@ -1,17 +1,21 @@
 import { startTrivia } from './play.js'; 
-import { printQuestionArea } from './questions.js'
+import { printQuestionArea, questionArea, questionTextArea } from './questions.js'
 import { getSelectedOptions } from './selectOptions.js';
+import { printSelectButton } from './printOptions.js';
 import { printAnswerArea, isBoolean } from './answers.js'
-import { verifyAnswer, resultArea } from './verifyAnswers.js'
+import { verifyAnswer, resultArea, resetScore } from './verifyAnswers.js'
 import { questions } from './play.js';
 import { score } from './verifyAnswers.js'
-import { printScore, showFinalScore } from './score.js';
+import { showFinalScore, scoreArea } from './score.js';
+import { start } from './api.js';
+import { printCategory } from './questions.js'
 const answers = document.getElementById("answer");
 const nextQuestion = document.getElementById("next");
 const containerNext = document.getElementById("container");
 const hiddenArea = document.getElementById("hiddenly");
 let answered = false;
 let index = 0;
+let playAgain;
 
 
 
@@ -24,32 +28,46 @@ const optionsAreaListener = hiddenArea.addEventListener('click', e => {
     }
 });
 
+const questionAreaListener = questionArea.addEventListener('click', e => {
+    if(e.target.classList.contains('btnAgain')) {
+
+        resultArea.style.display = 'block';
+        resultArea.innerHTML = '';
+        questionTextArea.innerHTML = '';
+        hiddenArea.style.display = 'block';
+        index = 0;
+        resetScore();
+        printCategory('A simple Trivia Game. Answer & get Fun!');
+        start();
+    }
+});
+
 const asnwersListener = answers.addEventListener("click", e => {
     if(!answered){
         const selectedAnswer = e.target.previousElementSibling.textContent.trim();
         answered = true;
         const bool = isBoolean(questions[index].type);
-        console.log(bool)
         verifyAnswer(selectedAnswer, index, e, bool);
-        nextQuestion.style.display = "block";
+        nextQuestion.style.display = 'block';
     }else
-        alert("Debes ir a la siguiente pregunta");
+        alert('Debes ir a la siguiente pregunta');
 });
 
-const containerNextListener = containerNext.addEventListener("click", e => {
-    if(e.target.classList.contains("next")){
+const containerNextListener = containerNext.addEventListener('click', e => {
+    if(e.target.classList.contains('next__absolute')){
         answered = false;
-        resultArea.style.display = "none";
+        resultArea.style.display = 'none';
         index ++;
+        nextQuestion.style.display = 'none';
         if(index < questions.length){
             printQuestionArea(index, questions);
             printAnswerArea(index, questions);
-        }else
+        }else{
+            playAgain = document.getElementById('startButton');
             showFinalScore(score);
-        nextQuestion.style.display = "none";
+        }
     }
 });
 
 
-
-export { hiddenArea, containerNextListener, optionsAreaListener, asnwersListener, index }
+export { questionAreaListener, hiddenArea, containerNextListener, optionsAreaListener, asnwersListener, index }

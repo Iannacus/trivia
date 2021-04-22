@@ -185,7 +185,7 @@ h1 {
 }
 
 @media (min-width: 768px){
-    .q__result{
+    .q__result p{
         font-size: 60px;
     }
 }
@@ -207,17 +207,9 @@ h1 {
     cursor: pointer;
     background-color: #28ABDE;
 }
-
-.answer__absolute {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 20;
-} 
 .next {
     display: none;
+    position: relative;
     background-color: blue;
     width: 45%;
     margin: 10px auto;
@@ -229,11 +221,14 @@ h1 {
     box-shadow: 3px 3px 5px 3px black;
 }
 
-@media (min-width: 600px){
-    p {
-        font-size: 14px;
-    }
-}
+.answer__absolute, .next__absolute {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+} 
 
 .options__single {
     font-size: 12px;

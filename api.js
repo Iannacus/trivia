@@ -1,16 +1,23 @@
 import { categories } from './categories.js';
 import { selectOptions } from './printOptions.js';
-import{ hiddenArea, containerNextListener, optionsAreaListener, asnwersListener } from './listeners.js'
+import{ questionAreaListener, hiddenArea, containerNextListener, optionsAreaListener, asnwersListener } from './listeners.js'
+import { printCategory, printQuestionNumber } from './questions.js';
 
-init();
+start();
 listeners();
 
 function listeners() {
     optionsAreaListener;
     asnwersListener;
     containerNextListener;
+    questionAreaListener;
 }
 
-function init() {
-     hiddenArea.innerHTML = selectOptions(categories);
+function start() {
+    let cat = categories;
+    printCategory('A simple Trivia Game. Answer & get Fun!');
+    printQuestionNumber('🤘');
+    hiddenArea.innerHTML = selectOptions(cat);
  }
+
+ export { start };

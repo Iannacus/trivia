@@ -20,7 +20,7 @@
                 <div class="tl"></div>
                 <div class="bl"></div>
             </div>
-            <div class="topic__text mr-top-3 center" id="topic">
+            <div class="topic__text mr-top-3 center" id="questionCategory">
                 <!--Tema de la pregunta -->
             </div>
             <div class="right mr-top-3">
@@ -42,16 +42,15 @@
         </div>
     </div>
     <div class="questionContainer center">
-        <div class="q">
+        <div class="q" id="questionArea">
             <div class="q__text" id="question">
                 <!--Aqui va la pregunta-->
                 
             </div>
             <div class="q__result" id="result">
                 <!--Resultado de respuesta js-->
-                <div class="options" id="hiddenly">
-
-                </div>
+            </div>
+            <div class="options" id="hiddenly"> 
             </div>
             <div class="score" id="score">
                 <!--Muestra score desde js-->
@@ -65,6 +64,7 @@
         </div>
         <div class="next" id="next">
             <p>Siguiente</p>
+            <div class='next__absolute'></div>
         </div>   
     </div>
     <script type="module" src="./api.js"></script>

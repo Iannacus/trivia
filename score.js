@@ -1,13 +1,13 @@
-import { questionArea } from './questions.js'
+import { questionTextArea } from './questions.js'
 import { answerArea } from './answers.js'
-import { questions } from './play.js'
+import { questions, playAgainButton } from './play.js'
 const scoreArea = document.getElementById("score");
 
 function showFinalScore(score) {
     answerArea.innerHTML = "";
     let totalPoints = getTotalPoints(questions);
-    console.log(totalPoints)
-    questionArea.innerHTML = `<p>Tu puntaje es: ${score} / ${totalPoints}</p>`;
+    questionTextArea.innerHTML = `<p>Final Score: ${score} / ${totalPoints}</p>
+                                ${playAgainButton()}`;
 }
 
 function printScore(score) {
@@ -28,4 +28,4 @@ function getTotalPoints(array){
     return points;
 }
 
-export { getQuestionDifficulty, showFinalScore, printScore };
+export { getQuestionDifficulty, showFinalScore, printScore, scoreArea };

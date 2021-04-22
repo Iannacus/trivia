@@ -19,7 +19,6 @@ function printAnswerArea(i, array) {
         count++;
         })
     }else if(type === "boolean"){
-        let count = 0;
         answerArea.innerHTML += `
             <div class="answer">
                 <div class="answer__text" id="answer0">
