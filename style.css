@@ -191,6 +191,7 @@ h1 {
 }
 
 .answer {
+    position: relative;
     background-color: var(--azulRespuestas);
     width: 100%;
     padding: 5px 0;
@@ -206,6 +207,15 @@ h1 {
     cursor: pointer;
     background-color: #28ABDE;
 }
+
+.answer__absolute {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+} 
 .next {
     display: none;
     background-color: blue;

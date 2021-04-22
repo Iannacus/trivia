@@ -1,7 +1,7 @@
 import { startTrivia } from './play.js'; 
 import { printQuestionArea } from './questions.js'
 import { getSelectedOptions } from './selectOptions.js';
-import { printAnswerArea } from './answers.js'
+import { printAnswerArea, isBoolean } from './answers.js'
 import { verifyAnswer, resultArea } from './verifyAnswers.js'
 import { questions } from './play.js';
 import { score } from './verifyAnswers.js'
@@ -12,6 +12,7 @@ const containerNext = document.getElementById("container");
 const hiddenArea = document.getElementById("hiddenly");
 let answered = false;
 let index = 0;
+
 
 
 const optionsAreaListener = hiddenArea.addEventListener('click', e => {
@@ -25,13 +26,11 @@ const optionsAreaListener = hiddenArea.addEventListener('click', e => {
 
 const asnwersListener = answers.addEventListener("click", e => {
     if(!answered){
-        let selectedAnswer = "";
-        if(e.target.classList.contains("answer"))
-            selectedAnswer = e.target.firstElementChild.textContent.trim();
-        else
-            selectedAnswer = e.target.textContent;
+        const selectedAnswer = e.target.previousElementSibling.textContent.trim();
         answered = true;
-        verifyAnswer(selectedAnswer, index);
+        const bool = isBoolean(questions[index].type);
+        console.log(bool)
+        verifyAnswer(selectedAnswer, index, e, bool);
         nextQuestion.style.display = "block";
     }else
         alert("Debes ir a la siguiente pregunta");

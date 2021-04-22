@@ -6,26 +6,32 @@ function printAnswerArea(i, array) {
     answerArea.innerHTML = "";
     if(type === "multiple") {
         const answers = sortAnswers(correct_answer, incorrect_answers);
+        let count = 0;
         answers.forEach(answer => {
             answerArea.innerHTML += `
-            <div class="answer">
-                <div class="answer__text">
+            <div class='answer'>
+                <div class='answer__text' id='answer${count}'>
                     <p>${answer}</p>
                 </div>
+                <div class='answer__absolute'></div>
             </div>
         `
+        count++;
         })
     }else if(type === "boolean"){
+        let count = 0;
         answerArea.innerHTML += `
             <div class="answer">
-                <div class="answer__text">
+                <div class="answer__text" id="answer0">
                     <p>True</p>
                 </div>
+                <div class='answer__absolute'></div>
             </div>
             <div class="answer">
-                <div class="answer__text">
+                <div class="answer__text" id="answer1">
                     <p>False</p>
                 </div>
+                <div class='answer__absolute'></div>
             </div>
         `
     }
@@ -38,4 +44,8 @@ function sortAnswers(correct, incorrect) {
     return answers
 }
 
-export { printAnswerArea, answerArea }
+function isBoolean(type){
+    return type == 'boolean' ? true : false;
+}
+
+export { printAnswerArea, answerArea, isBoolean }
