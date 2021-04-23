@@ -17,7 +17,7 @@ function verifyAnswer(ans, i, e, isBoolean) {
         paintAnswerArea(getAreaId(e), '#DD2730'); //red
         paintCorrectAnswerArea(correctAnswer, isBoolean);        
     }
-    resultArea.style.display = "block";
+    resultArea.style.display = 'block';
     printScore(score);
 }
 

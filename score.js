@@ -4,7 +4,7 @@ import { questions, playAgainButton } from './play.js'
 const scoreArea = document.getElementById("score");
 
 function showFinalScore(score) {
-    answerArea.innerHTML = "";
+    answerArea.innerHTML = '';
     let totalPoints = getTotalPoints(questions);
     questionTextArea.innerHTML = `<p>Final Score: ${score} / ${totalPoints}</p>
                                 ${playAgainButton()}`;

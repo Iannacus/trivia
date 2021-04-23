@@ -42,7 +42,7 @@ const questionAreaListener = questionArea.addEventListener('click', e => {
     }
 });
 
-const asnwersListener = answers.addEventListener("click", e => {
+const asnwersListener = answers.addEventListener('click', e => {
     if(!answered){
         const selectedAnswer = e.target.previousElementSibling.textContent.trim();
         answered = true;

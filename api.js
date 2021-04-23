@@ -14,10 +14,9 @@ function listeners() {
 }
 
 function start() {
-    let cat = categories;
     printCategory('A simple Trivia Game. Answer & get Fun!');
     printQuestionNumber('🤘');
-    hiddenArea.innerHTML = selectOptions(cat);
+    hiddenArea.innerHTML = selectOptions(categories);
  }
 
  export { start };

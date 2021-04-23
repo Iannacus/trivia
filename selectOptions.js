@@ -19,7 +19,7 @@ function getType() {
 }
 
 function valueToUrlText(value, urlText){
-    if(value != "")
+    if(value != '')
         return `&${urlText}=${value}`
     else
         return ''
