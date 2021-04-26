@@ -1,5 +1,4 @@
 import { printQuestionArea } from './questions.js'
-import { questionArea } from './questions.js'
 import { printAnswerArea } from './answers.js'
 import { index } from './listeners.js';
 let questions = [];
@@ -7,17 +6,17 @@ let questions = [];
 
 function startTrivia(amount, dificulty, category, type) {
     const apiUrl = generateLink(amount, dificulty, category, type);
-    apiRequest(apiUrl);
+    apiRequest(apiUrl, printData);
 }
 
-function generateLink(a, d, c, t){
-    return `https://opentdb.com/api.php?${a}${c}${d}${t}`
+function generateLink(amount, difficulty, category, type){
+    return `https://opentdb.com/api.php?${amount}${category}${difficulty}${type}`
 }
 
-function apiRequest(link){
+function apiRequest(link, funct){
     fetch(link)
-      .then(response => response.json())
-      .then(data => printData(data.results))
+      .then((response) => response.json())
+      .then((data) => funct(data.results))
 }
 
 function printData(data) {
@@ -37,4 +36,4 @@ function playAgainButton(){
 
 
 
-export { startTrivia, playAgainButton, questions, }
+export { startTrivia, playAgainButton, apiRequest, questions, }

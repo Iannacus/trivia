@@ -20,9 +20,7 @@ function getQuestionDifficulty(difficulty) {
 
 function getTotalPoints(array){
     let points = 0;
-    
     array.forEach(question => {
-
         points += getQuestionDifficulty(question.difficulty);
     });
     return points;

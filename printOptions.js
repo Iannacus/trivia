@@ -22,9 +22,9 @@ function printSelectDificulty(){
 function printSelectCategories(categories) {
     let options = '';
     categories.forEach(category => {
+        console.log(`'${category.id}'`);
         options += `
             <option value='${category.id}'>${category.name}</option>
-
         `
     });
     return `

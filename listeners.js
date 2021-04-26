@@ -1,7 +1,6 @@
 import { startTrivia } from './play.js'; 
 import { printQuestionArea, questionArea, questionTextArea } from './questions.js'
 import { getSelectedOptions } from './selectOptions.js';
-import { printSelectButton } from './printOptions.js';
 import { printAnswerArea, isBoolean } from './answers.js'
 import { verifyAnswer, resultArea, resetScore } from './verifyAnswers.js'
 import { questions } from './play.js';

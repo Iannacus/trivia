@@ -3,30 +3,19 @@ function getQuestionsAmount(){
     return `amount=${amount.value}`  
 }
 
-function getCategory() {
-    const category = document.getElementById('category');
-    return valueToUrlText(category.options[category.selectedIndex].value, 'category');
-}
-
-function getDifficulty() {
-    const difficulty = document.getElementById('difficulty')
-    return valueToUrlText(difficulty.options[difficulty.selectedIndex].value, 'difficulty');
-}
-
-function getType() {
-    const type = document.getElementById('type');
-    return valueToUrlText(type.options[type.selectedIndex].value, 'type');
+function getOption(option, category){
+    return valueToUrlText(option.options[option.selectedIndex].value, category);
 }
 
 function valueToUrlText(value, urlText){
-    if(value != '')
-        return `&${urlText}=${value}`
-    else
-        return ''
+    return value != '' ? `&${urlText}=${value}` : '';
 }
 
 function getSelectedOptions() {
-    return [getQuestionsAmount(), getDifficulty(), getCategory(), getType()]
+    const category = document.getElementById('category');
+    const difficulty = document.getElementById('difficulty')
+    const type = document.getElementById('type');
+    return [getQuestionsAmount(), getOption(difficulty, 'difficulty'), getOption(category, 'category'), getOption(type, 'type')]
 }
 
 export { getSelectedOptions }
