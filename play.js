@@ -1,8 +1,8 @@
 import { printQuestionArea } from './questions.js'
 import { printAnswerArea } from './answers.js'
 import { index } from './listeners.js';
+const difficultyArea = document.getElementById("difficulty");
 let questions = [];
-
 
 function startTrivia(amount, dificulty, category, type) {
     const apiUrl = generateLink(amount, dificulty, category, type);
@@ -23,6 +23,12 @@ function printData(data) {
     questions = data;
     printQuestionArea(index, questions);
     printAnswerArea(index, questions);
+    printDifficulty(index);
+
+}
+
+function printDifficulty(index){
+    difficultyArea.innerHTML = `<p>Difficulty: ${questions[index].difficulty}</p>`;
 }
 
 function playAgainButton(){
@@ -36,4 +42,4 @@ function playAgainButton(){
 
 
 
-export { startTrivia, playAgainButton, apiRequest, questions, }
+export { startTrivia, playAgainButton, apiRequest, printDifficulty, questions, difficultyArea }

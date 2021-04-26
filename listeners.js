@@ -1,4 +1,4 @@
-import { startTrivia } from './play.js'; 
+import { startTrivia, printDifficulty, difficultyArea } from './play.js'; 
 import { printQuestionArea, questionArea, questionTextArea } from './questions.js'
 import { getSelectedOptions } from './selectOptions.js';
 import { printAnswerArea, isBoolean } from './answers.js'
@@ -14,8 +14,7 @@ const containerNext = document.getElementById("container");
 const hiddenArea = document.getElementById("hiddenly");
 let answered = false;
 let index = 0;
-let playAgain;
-
+let playAgain = '';
 
 
 const optionsAreaListener = hiddenArea.addEventListener('click', e => {
@@ -29,11 +28,11 @@ const optionsAreaListener = hiddenArea.addEventListener('click', e => {
 
 const questionAreaListener = questionArea.addEventListener('click', e => {
     if(e.target.classList.contains('btnAgain')) {
-
         resultArea.style.display = 'block';
         resultArea.innerHTML = '';
         questionTextArea.innerHTML = '';
         hiddenArea.style.display = 'block';
+        difficultyArea.innerHTML = '';
         index = 0;
         resetScore();
         printCategory('A simple Trivia Game. Answer & get Fun!');
@@ -61,6 +60,7 @@ const containerNextListener = containerNext.addEventListener('click', e => {
         if(index < questions.length){
             printQuestionArea(index, questions);
             printAnswerArea(index, questions);
+            printDifficulty(index);
         }else{
             playAgain = document.getElementById('startButton');
             showFinalScore(score);

@@ -206,6 +206,7 @@ input, select {
 @media (min-width: 768px){
     .q__result p{
         font-size: 60px;
+        margin-top: 2rem;
     }
 }
 
@@ -298,4 +299,11 @@ input, select {
     position: absolute;
     bottom: 0;
     right: 10px;
+}
+
+.difficulty {
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
 }
