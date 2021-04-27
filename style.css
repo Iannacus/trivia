@@ -19,7 +19,13 @@ header {
 h1 {
     text-align: center;
     color: white;
-    font-size: 48px;
+    font-size: 32px;
+}
+
+@media (min-width: 768px){
+    h1{
+        font-size: 48px;
+    }
 }
 
 *, *:after, *:before{
@@ -196,7 +202,7 @@ input, select {
 
 .q__result {
     text-align: center;
-    font-size: 48px;
+    font-size: 32px;
     color: red;
     margin: 0;
     margin: 0;
@@ -295,14 +301,14 @@ input, select {
 }
 
 .score {
-    font-size: 14px;
+    font-size: 9px;
     position: absolute;
     bottom: 0;
     right: 10px;
 }
 
 .difficulty {
-    font-size: 14px;
+    font-size: 9px;
     position: absolute;
     bottom: 0;
     left: 10px;
